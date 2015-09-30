@@ -6,8 +6,14 @@
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
+  <header>
+    <%if !session[:user_id].nil?%>
+      <p><%= link_to 'Logout', logout_path %></p>
+    <%else%>
+      <p><%= link_to 'Login', login_path %></p>
+    <%end%>
+  </header>
 <body>
-
 <%= yield %>
 
 </body>
