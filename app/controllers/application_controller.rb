@@ -1,5 +1,13 @@
 class ApplicationController < ActionController::Base
-  # Prevent CSRF attacks by raising an exception.
-  # For APIs, you may want to use :null_session instead.
   protect_from_forgery with: :exception
+
+   def client
+      client = Soundcloud.new(
+        :client_id => ENV["CLIENT_ID"],
+        :client_secret => ENV["CLIENT_SECRET"],
+        :redirect_uri => ENV["REDIRECT_URI"]
+        )
+    end
+
+
 end
