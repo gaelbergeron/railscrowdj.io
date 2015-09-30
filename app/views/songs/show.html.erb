@@ -1,5 +1,14 @@
 <h1>Soundcloud found for <%=@params.capitalize%></h1>
 
+<div class="player">
+  <h4 class="trackTitle">Current track</h4>
+      <div id="trackPrevious" id="previous">Previous</div>
+      <div id="trackPlay" id="play">Play</div>
+      <div id="trackPause" id="pause">Pause</div>
+      <div id="trackNext" id="next">Next</div>
+</div>
+
+
 <%@tracks.each do |track|%>
 
 
@@ -8,3 +17,5 @@
   </audio>
 
 <%end%>
+
+
