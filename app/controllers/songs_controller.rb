@@ -6,12 +6,12 @@ class SongsController < ApplicationController
 
   def create
     @params = params[:song][:title]
-    @tracks = client.get('/tracks',:q => "#{params[:song][:title]}")
+    p @tracks = client.get('/tracks',:q => "#{params[:song][:title]}")
     render 'show'
-    # @tracks.each do |c|
-    #   p c.stream_url
-    # end
-
+    @tracks.each do |track |
+      p track.stream_url
+      p track.id
+    end
   end
 
 

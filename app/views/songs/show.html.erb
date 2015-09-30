@@ -1,4 +1,4 @@
-<h1>Soundcloud found for <%=@params.capitalize%></h1>
+<h1>SoundCloud found for <%=@params.capitalize%></h1>
 
 <div class="player">
   <h4 class="trackTitle">Current track</h4>
@@ -13,7 +13,7 @@
 
 
   <audio controls>
-      <source src=<%=track.stream_url+'?client_id='+ENV["CLIENT_ID"] %> type="audio/ogg">
+      <source src="<%=track.stream_url+'?client_id='+ENV["CLIENT_ID"] %>" type="audio/ogg">
   </audio>
 
 <%end%>
