@@ -1,0 +1,16 @@
+<h1>Welcome to Crowdj.io</h1>
+<h2>Search a SoundCloud song</h2>
+
+<%= form_for :song, url: songs_path do |f| %>
+  <p>
+    <%= f.label :song %><br>
+    <%= f.text_field :title %>
+  </p>
+
+  <p>
+    <%= f.submit %>
+  </p>
+<%end%>
+
+
+
