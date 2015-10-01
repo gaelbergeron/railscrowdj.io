@@ -1,0 +1,14 @@
+<h1>Welcome to Crowdj.io</h1>
+
+  <%if !session[:user_id].nil?%>
+    <h2>Search a SoundCloud song</h2>
+
+    <form action="/soundcloud/api" method="get" >
+      <input name="title" type="text">
+      <input type="submit">
+    </form>
+
+  <%else%>
+    <h4>Please log in if you would like to listen to music</h4>
+    <%= link_to 'Login', {:controller => 'sessions', :action => 'new'} %>
+  <%end%>

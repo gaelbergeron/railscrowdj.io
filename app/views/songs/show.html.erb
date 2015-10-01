@@ -11,9 +11,15 @@
         <audio controls>
             <source src=<%=track.stream_url+'?client_id='+ENV["CLIENT_ID"] %> type="audio/ogg">
         </audio>
+          <%=form_for :song, url: songs_path do |f| %>
+            <%= f.hidden_field :stream_url,:value => track.stream_url %>
+            <%= f.hidden_field :user_id,:value => current_user.id %>
+            <%= f.hidden_field :title,:value => track.title %>
+            <%= f.hidden_field :artist,:value => track.artist %>
+          <%=f.submit%>
+          <%end%>
       </div>
     </div>
   </li>
   <%end%>
-
 </ul>

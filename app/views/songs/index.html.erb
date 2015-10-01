@@ -1,21 +1,13 @@
-<h1>Welcome to Crowdj.io</h1>
+<h1>Your Songs</h1>
 
-
-  <%if !session[:user_id].nil?%>
-    <h2>Search a SoundCloud song</h2>
-    <%= form_for :song, url: songs_path do |f| %>
-      <p>
-        <%= f.label :song %><br>
-        <%= f.text_field :title %>
-      </p>
-      <p>
-        <%= f.submit %>
-      </p>
-    <%end%>
-  <%else%>
-    <h4>Please log in if you would like to listen to music</h4>
-    <%= link_to 'Login', {:controller => 'sessions', :action => 'new'} %>
+  <%@songs.each do |song|%>
+    <h3><%= song.title %></h3>
+    <audio controls>
+      <source src=<%=song.stream_url+'?client_id='+ENV["CLIENT_ID"] %> type="audio/ogg">
+    </audio>
+    <%= button_to 'Delete', user_song_path(song.user_id,song.id), method: :delete %>
   <%end%>
+
 
 
 

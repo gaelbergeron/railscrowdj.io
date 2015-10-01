@@ -9,6 +9,8 @@
   <header>
     <%if !session[:user_id].nil?%>
       <p><%= link_to 'Logout', logout_path %></p>
+      <p><%= link_to 'Your Playlist', user_songs_path(current_user) %></p>
+      <p><%= link_to 'Your Profile Page', user_path(current_user) %></p>
     <%else%>
       <p><%= link_to 'Login', login_path %></p>
     <%end%>

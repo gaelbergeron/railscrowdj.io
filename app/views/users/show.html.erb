@@ -1,5 +1,5 @@
 <h1>Hello, <%=@user.username.capitalize%></h1>
 
   <% if !session[:user_id].nil? %>
-    <h6><%= link_to "Start Listening!", songs_path %></h6>
+    <h6><%= link_to "Start Listening!", {:controller => 'search', :action =>'search'} %></h6>
   <%end%>

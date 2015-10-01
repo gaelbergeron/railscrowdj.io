@@ -7,6 +7,7 @@ Rails.application.routes.draw do
 
 
 
+
   resources :users do
    resources :songs
   end
@@ -14,5 +15,8 @@ Rails.application.routes.draw do
 
 
   root 'welcome#index'
+
+  get 'soundcloud/api'
+  get 'search/search'
 
 end
