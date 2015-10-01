@@ -1,15 +1,7 @@
 class UsersController < ApplicationController
 
-  before_action :load_user
-
-  # validates :username, presence true
-
-  def load_user
-    @user = User.find(params[:id])
-  end
-
   def show
-    # @user = User.find(params[:id])
+    @user = User.find(params[:id])
   end
 
   def new
